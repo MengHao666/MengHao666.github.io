@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HDR</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  </head>
+
+  <!-- cover -->
+  <section>
+    <div class="jumbotron text-center mt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2> 3D Interacting Hand Pose Estimation by Hand De-occlusion and Removal</h2>
+            <h4 style="color:#5a6268;">ECCV 2022</h4>
+            <hr>
+            <h6>
+                <a href="https://menghao666.github.io/" target="_blank">Hao Meng</a><sup>1,3*</sup>,
+                <a href="https://jin-s13.github.io/" target="_blank">Sheng Jin</a><sup>2,3*</sup>,
+                <a href="https://scholar.google.com/citations?user=KZn9NWEAAAAJ&hl=en" target="_blank">Wentao Liu</a><sup>3,4</sup>,
+                <a href="https://scholar.google.com.hk/citations?user=AerkT0YAAAAJ&hl=en" target="_blank">Chen Qian</a><sup>3</sup>,
+                <a href="https://ieeexplore.ieee.org/author/37897574600" target="_blank">Mengxiang Lin</a><sup>1</sup>,
+                <a href="https://wlouyang.github.io/" target="_blank">Wanli Ouyang</a><sup>4,5</sup>,
+                <a href="http://luoping.me/" target="_blank">Ping Luo</a><sup>2</sup>,
+            <p><sup>1</sup>Beihang University &nbsp;&nbsp;
+                <sup>2</sup>The University of Hong Kong &nbsp;&nbsp;
+                <sup>3</sup>SenseTime Research and Tetras.AI &nbsp;&nbsp;
+                <sup>4</sup>Shanghai AI Lab &nbsp;&nbsp;
+                <sup>5</sup>The University of Sydney</p>
+            <div class="row justify-content-center">
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="" role="button"  target="_blank">
+                    <i class="fa fa-file"></i> Paper [coming soon]</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="" role="button"  target="_blank">
+                    <i class="fa fa-file"></i> Supplementary [coming soon]</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="" role="button"  target="_blank">
+                    <i class="fa fa-github-alt"></i> Code [coming soon]</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="" role="button"  target="_blank">
+                    <i class="fa fa-github-alt"></i> Datatset [coming soon]</a> </p>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- abstract -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Abstract</h3>
+            <hr style="margin-top:0px">
+            <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                  <source src="images/video-teaser_c.mp4" type="video/mp4">
+            </video> -->
+            <div class="text-center" style="margin-top: 60px; margin-bottom: 20px;">
+              <img src="images/intro.png" width=100% class="img-fluid" alt="Responsive image">
+            </div>
+              <!-- <br><br> -->
+          <p class="text-justify">  </p>
+          <p class="text-justify"> Estimating 3D interacting hand pose from a single RGB image is essential for understanding human actions.
+              Unlike most previous works that directly predict the 3D poses of two interacting hands simultaneously,
+              we propose to decompose the challenging interacting hand pose estimation task and estimate the pose of each hand separately.
+              In this way, it is straightforward to take advantage of the latest research progress on the single-hand pose estimation system.
+              However, hand pose estimation in interacting scenarios is very challenging, due to (1) severe hand-hand occlusion and
+              (2) ambiguity caused by the homogeneous appearance of hands. To tackle these two challenges,
+              we propose a novel Hand De-occlusion and Removal (HDR) framework to perform hand de-occlusion and distractor removal.
+              We also propose the first large-scale synthetic amodal hand dataset, termed Amodal InterHand Dataset (AIH),
+              to facilitate model training and promote the development of the related research. Experiments show that
+              the proposed method significantly outperforms previous state-of-the-art interacting hand pose estimation approaches.
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+
+
+<!--   overview -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Overview</h3>
+            <hr style="margin-top:0px">
+            <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                  <source src="images/video-teaser_c.mp4" type="video/mp4">
+            </video> -->
+            <div class="text-center" style="margin-top: 60px; margin-bottom: 20px;">
+              <img src="images/overview.png" width=100% class="img-fluid" alt="Responsive image">
+            </div>
+              <!-- <br><br> -->
+          <p class="text-justify">  </p>
+          <p class="text-justify"> Figure 2.Illustration of our Hand De-occlusion and Removal (HDR) framework for the
+            task of 3D interacting hand pose estimation. We first employ HASM (Hand Amodal
+            Segmentation Module) to segment the amodal and modal masks of the left and the
+            right hand in the image. Given the predicted masks, we locate and crop the image
+            patch centered at each hand. Then, for every cropped image, the HDRM (Hand De-
+            occlusion and Removal Module) recovers the appearance content of the occluded part
+            of one hand and removes the other distracting hand simultaneously. In this way, the
+            interacting two-hand image is transformed into a single-hand image, and can be easily
+            handled by SHPE (Single Hand Pose Estimation) to get the final 3D hand poses.
+ </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  
+
+  
+  <!-- Disentangled Interpolation and Style Mixing -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>HDRNet</h3>
+            <hr style="margin-top:0px">
+            <div class="text-center" style="margin-top: 60px; margin-bottom: 20px;">
+              <img src="images/HDRNet.png" width=100% class="img-fluid" alt="Responsive image">
+            </div>
+          <p class="text-justify">  </p>
+<!--           <p class="text-justify"> hhhhh </p> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Amodal InterHand (AIH) Dataset</h3>
+            <hr style="margin-top:0px">
+          <div class="text-center" style="margin-top: 60px; margin-bottom: 20px;">
+              <img src="images/AIH_dataset.png" width=100% class="img-fluid" alt="Responsive image">
+            </div>
+          <p class="text-justify">  </p>
+<!--           <p class="text-justify"> hhhhh </p> -->
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Qualitative Results</h3>
+            <hr style="margin-top:0px">
+          <div class="text-center" style="margin-top: 60px; margin-bottom: 20px;">
+              <img src="images/qualitive_result.png" width=100% class="img-fluid" alt="Responsive image">
+            </div>
+          <p class="text-justify">  </p>
+<!--           <p class="text-justify"> hhhhh </p> -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  
+  <!-- Free-View Local Facial Editing -->
+  </section>
+  <br>
+
+    <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Demo video</h3>
+            <hr style="margin-top:0px">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe style="embed-responsive-item" src="https://www.youtube.com/embed/DUl8gODOd6g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  
+<!--   </div>
+            <div class="row mb-4" id="overview-video">
+                <div class="col-md-8 mx-auto grey-container">
+                    <h4 class="pb-2">Narrated Overview</h4>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/voebZx7f32g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div> -->
+        
+<!--    <div class="row">
+            <div class="col-12 text-center">
+               
+                <h3>
+                    Demo Video
+                </h3>
+                <hr style="margin-top:0px">
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/watch?v=4VEh-ApxP8I" allowfullscreen=""
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+  <!-- citing -->
+  <section>
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <h3>Citation</h3>
+          <hr style="margin-top:0px">
+              <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+<code>@article{meng2022hdr,
+  title={3D Interacting Hand Pose Estimation by Hand De-occlusion and Removal},
+  author={Hao Meng, Sheng Jin, Wentao Liu, Chen Qian, Mengxiang Lin, Wanli Ouyang, and Ping Luo},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2022}
+  month={October},
+  <!-- journal={arXiv preprint arXiv:2111.15490}, -->
+}</code></pre>
+          <hr>
+      </div>
+    </div>
+  </div>
+  <section>
+  <br>
+  
+  <section>
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <h3>Acknowledgement</h3>
+          <hr style="margin-top:0px">
+              <p class="text-justify">  Mengxiang Lin is supported by State Key Laboratory of Software Development Environment under Grant No SKLSDE 2022ZX-06. Ping Luo is supported by the General Research Fund of HK No.27208720, No.17212120, and No.17200622.
+Wanli Ouyang is supported by the Australian Research Council Grant DP200103223, Australian Medical Research Future Fund MRFAI000085, CRC-P Smart Material Recovery Facility (SMRF) – Curby Soft Plastics, and CRC-P ARIA - Bionic Visual-Spatial Prosthesis for the Blind..
+ </p>
+         
+      </div>
+    </div>
+  </div>
+  <section>
+
+</body>
+</html>
+
